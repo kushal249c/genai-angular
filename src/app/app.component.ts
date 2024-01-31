@@ -69,7 +69,7 @@ export class AppComponent {
     console.log('Uploading PDF...');
       const formData = new FormData();
       if(this.file){formData.append('pdf', this.file);}
-      axios.post('http://localhost:3000/upload', formData, {
+      axios.post('https://gen-ai-nodejs.vercel.app/upload', formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
