@@ -67,6 +67,17 @@ button {
   font-weight: bold;
 }
 
+button:active{
+  background-color: #6C99D0 !important;
+}
+
+button:disabled{
+  background-color: #ccc !important;
+  cursor: not-allowed;
+
+}
+
+
 /* Response data */
 div p {
   margin-top: 15px;

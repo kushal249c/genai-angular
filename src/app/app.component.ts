@@ -94,6 +94,7 @@ export class AppComponent {
       this.isLoading = false;
     })
     .catch(error => {
+      this.isLoading = false;
       console.error(error);
       alert(error)
     }); 

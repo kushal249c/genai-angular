@@ -9,7 +9,7 @@
 
   <div class="container" z>
     <input type="file" (change)="onFileChange($event)">
-    <button class="upload-button" (click)="uploadPDF()">Upload PDF</button>
+    <button class="upload-button" (click)="uploadPDF()" [disabled]="!file">Upload PDF</button>
   </div>
   <div *ngIf="!dataExists && isLoading" >
     <div class="loader"></div>
