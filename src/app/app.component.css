@@ -1,4 +1,18 @@
+.loader {
+  border: 3px solid #fff; /* Light grey */
+  border-radius: 50%;
+  border-top: 3px solid blue; /* Blue top border */
+  border-bottom: 3px solid blue; /* Blue bottom border */
+  width: 12px;
+  height: 12px;
+  animation: spin 2s linear infinite;
+  margin:0 auto;
+}
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 /* Header */
 header {

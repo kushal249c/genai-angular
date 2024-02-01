@@ -11,8 +11,11 @@
     <input type="file" (change)="onFileChange($event)">
     <button class="upload-button" (click)="uploadPDF()">Upload PDF</button>
   </div>
+  <div *ngIf="!dataExists && isLoading" >
+    <div class="loader"></div>
 
-  <div class="lease-card" *ngIf="dataExists">
+    </div>
+  <div class="lease-card" *ngIf="dataExists && !isLoading">
     <form [formGroup]="leaseForm" (ngSubmit)="onSubmit()">
       <h2 class="form-heading">Lease Agreement</h2>
 
@@ -47,7 +50,7 @@
           <input type="text" id="propertyAddress" formControlName="propertyAddress" required />
         </div>
       </div>
-      <button class="submit-button" type="submit" [disabled]="!leaseForm.valid">Submit Agreement</button>
+      <button class="submit-button" type="submit" [disabled]="">Submit Agreement</button>
     </form>
   </div>
 

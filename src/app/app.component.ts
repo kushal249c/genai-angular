@@ -29,6 +29,8 @@ export class AppComponent {
   rentDefault = '';
   propertyAddressDefault = 'No Address';
 
+  isLoading:boolean = false
+
   leaseForm: FormGroup ;
   constructor() {
     this.leaseForm = new FormGroup({
@@ -66,6 +68,7 @@ export class AppComponent {
 
   uploadPDF() {
     this.dataExists = false;
+    this.isLoading = true;
     console.log('Uploading PDF...');
       const formData = new FormData();
       if(this.file){formData.append('pdf', this.file);}
@@ -86,11 +89,13 @@ export class AppComponent {
         endDate: new FormControl(this.responseData["ending_date"]),
         rent: new FormControl(this.responseData["rent"]),
         propertyAddress: new FormControl(this.responseData["property_name"]),
+        
       });
+      this.isLoading = false;
     })
     .catch(error => {
       console.error(error);
-      // Handle error appropriately
+      alert(error)
     }); 
   }
 
